@@ -65,13 +65,13 @@ I created a BeautifulSoup object and parsed the HTML for all table header elemen
 
 I then created a result set from the Beautiful Soup object for all data from each row (all elements with class label 'data-row').
 
+To collect all of the scraped data, I created an empty list to store all table data and looped through the 'row_data' result set to find all row data elements (tagged 'td' in the HTML). For each row, I started a new empty list and added the contents of each cell as an element in that list. I appended the list of data for each row to my 'table_data' to store all data from the table.
+
 <br>
 
 <strong>Step 3: Store the Data</strong>
 
-I created an empty list to store all table data and looped through the 'row_data' result set to find all row data elements (tagged 'td' in the HTML). For each row, I started a new empty list and added the contents of each cell as an element in that list. I appended the list of data for each row to my 'table_row_list' to store all data from the table.
-
-Finally, I created a Pandas dataframe using the 'table_row_list' and headers from the 'header_list'. The first 5 rows of the dataframe appeared as such:
+I created a Pandas dataframe called 'mars_weather_df' using the 'table_data' list and column headers from the 'header_list'. The first 5 rows of the dataframe appeared as such:
 
 ![marsweather_df](mars_weather_df_screenshot.png)
 
